@@ -1,0 +1,24 @@
+#img{
+        width:100%;
+        position: fixed; right: 0; bottom: 0;
+        min-width: 100%; min-height: 100%;
+        height: auto;
+        z-index: -100;
+        background-size: cover;
+}
+.form{
+    background: rgba(255,255,255,0.2);width:420px;margin:120px auto;margin-right: 350px
+}
+ 
+/*阴影*/
+.fa{
+    display: inline-block;top: 25px;left: 6px;position: relative;color: #ccc;
+}
+ 
+input[type="text"],input[type="password"]{
+    padding-left:26px;
+}
+ 
+.checkbox{
+    padding-left:21px;
+}

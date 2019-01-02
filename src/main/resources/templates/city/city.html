@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>主页</title>
+<link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="../../lib/bootstrap-table/bootstrap-table.css" />
+<link rel="stylesheet" href="../../lib/toastr/toastr.css" />
+<link rel="stylesheet"
+	href="../../lib/bootstrap-validator/css/bootstrapValidator.min.css" />
+</head>
+<body>
+	<form>
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">标题</h4>
+					</div>
+					<div class="modal-body">
+						<input type="hidden" name="id" class="form-control" id="id">
+
+						<div class="form-group">
+							<label for="proid">省ID</label> <input type="text" name="proid"
+								class="form-control" id="proid" placeholder="省ID">
+						</div>
+						<div class="form-group">
+							<label for="cityname">城市名</label> <input type="text"
+								name="cityname" class="form-control" id="cityname"
+								placeholder="城市">
+						</div>
+						<div class="form-group">
+							<label for="description">描述</label> <input type="text"
+								name="description" class="form-control" id="description"
+								placeholder="描述">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="closebtn" class="btn btn-default"
+							data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+						</button>
+						<button type="submit" id="submitbtn" name="submit"
+							class="btn btn-primary">提交</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal -->
+		</div>
+	</form>
+	
+
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="detailModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="detailModalLabel">标题</h4>
+					</div>
+					<div class="modal-body">
+					
+
+						<div class="form-group">
+							<label for="proid">省ID</label> <input type="text" name="proid"
+								class="form-control" id="proid" placeholder="省ID" readonly="readonly">
+						</div>
+						<div class="form-group">
+							<label for="cityname">城市名</label> <input type="text"
+								name="cityname" class="form-control" id="cityname"
+								placeholder="城市" readonly="readonly">
+						</div>
+						<div class="form-group">
+							<label for="description">描述</label> <input type="text"
+								name="description" class="form-control" id="description"
+								placeholder="描述" readonly="readonly">
+						</div>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal -->
+		</div>
+
+	
+	<div class="panel-body" style="padding-bottom: 0px;">
+		<div class="panel panel-default">
+			<div class="panel-heading">查询条件</div>
+			<div class="panel-body">
+				<!-- 搜索栏 -->
+				<form id="formSearch" class="form-horizontal">
+					<div class="form-group" style="margin-top: 15px">
+						<label class="control-label col-sm-1" for="txt_search_cityname">城市名</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" id="txt_search_cityname">
+						</div>
+						<div class="col-sm-4" style="text-align: left;">
+							<button type="button" style="margin-left: 50px" id="btn_query"
+								class="btn btn-primary">查询</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- 头部工具栏 -->
+		<div id="toolbar" class="btn-group">
+			<button id="btn_add" type="button" class="btn btn-default">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+			</button>
+			<button id="btn_delete" type="button" class="btn btn-default">
+				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>批量删除
+			</button>
+		</div>
+		<!-- 主体表格 -->
+		<table id="table"></table>
+</body>
+<script type="text/javascript"
+	src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript"
+	src="../../lib/bootstrap-table/bootstrap-table.js"></script>
+<!-- 汉化文件，放在 bootstrap-table.js 后面 -->
+<script type="text/javascript"
+	src="../../lib/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+
+
+<!-- 弹出框样式插件 -->
+<script type="text/javascript" src="../../lib/bootbox.js"></script>
+<script type="text/javascript" src="../../lib/toastr/toastr.min.js"></script>
+<!-- 校验插件 -->
+<script type="text/javascript"
+	src="../../lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="../../js/city/city.js"></script>
+</html>
+
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>主页</title>
+<link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.css" />
+<link rel="stylesheet"
+	href="../../lib/bootstrap-table/bootstrap-table.css" />
+<link rel="stylesheet" href="../../lib/toastr/toastr.css" />
+<link rel="stylesheet"
+	href="../../lib/bootstrap-validator/css/bootstrapValidator.min.css" />
+<link rel="stylesheet"
+	href="../../lib/bootstrap-fileinput/css/fileinput.min.css" />
+</head>
+<body>
+	<form>
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">标题</h4>
+					</div>
+					<div class="modal-body">
+						<input type="hidden" name="id" class="form-control" id="id">
+
+						<div class="form-group">
+							<label for="username">用户名</label> <input type="text"
+								name="username" class="form-control" id="username"
+								placeholder="用户名">
+						</div>
+						<div class="form-group">
+							<label for="password">密码</label> <input type="text"
+								name="password" class="form-control" id="password"
+								placeholder="密码">
+						</div>
+						<div class="form-group">
+							<label for="description">图片</label>
+							<div class="file-loading">
+								<input id="file-fr" name="file" type="file" multiple>
+							</div>
+							<div>
+								<input type="text" id="img" name="img" value="" hidden="hidden"/>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="closebtn" class="btn btn-default"
+							data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+						</button>
+						<button type="submit" id="submitbtn" name="submit"
+							class="btn btn-primary">提交</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal -->
+		</div>
+	</form>
+
+
+	<!-- 头部工具栏 -->
+	<div id="toolbar" class="btn-group">
+		<button id="btn_add" type="button" class="btn btn-default">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+		</button>
+	</div>
+	<!-- 主体表格 -->
+	<table id="table"></table>
+</body>
+<!-- Jquery -->
+<script type="text/javascript"
+	src="../../lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript"
+	src="../../lib/bootstrap-table/bootstrap-table.js"></script>
+<!-- 汉化文件，放在 bootstrap-table.js 后面 -->
+<script type="text/javascript"
+	src="../../lib/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+
+
+<!-- 弹出框样式插件 -->
+<script type="text/javascript" src="../../lib/bootbox.js"></script>
+<script type="text/javascript" src="../../lib/toastr/toastr.min.js"></script>
+<!-- 校验插件 -->
+<script type="text/javascript"
+	src="../../lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!-- 文件上传插件 -->
+<script type="text/javascript"
+	src="../../lib/bootstrap-fileinput/js/plugins/sortable.min.js"></script>
+<script type="text/javascript"
+	src="../../lib/bootstrap-fileinput/js/fileinput.min.js"></script>
+<script type="text/javascript"
+	src="../../lib/bootstrap-fileinput/js/locales/zh.js"></script>
+<script type="text/javascript" src="../../js/user/user.js"></script>
+</html>
+
+
